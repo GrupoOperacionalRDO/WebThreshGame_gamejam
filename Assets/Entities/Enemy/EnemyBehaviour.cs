@@ -12,7 +12,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	public void DestroyEnemy(){
-		EventManager.HandleMessage("OnEnemyDestroy");
+		EventManager.HandleMessage("OnEnemyDestroyed");
 		Destroy(this.gameObject);
 	}
 
