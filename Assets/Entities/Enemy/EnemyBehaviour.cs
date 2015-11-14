@@ -11,7 +11,11 @@ public class EnemyBehaviour : MonoBehaviour {
 		transform.parent = parent.transform;
 	}
 
+	public void DestroyEnemy(){
+		Destroy(this.gameObject);
+	}
+
 	void OnBecameInvisible(){
-		Destroy (this.gameObject);
+		DestroyEnemy();
 	}
 }
