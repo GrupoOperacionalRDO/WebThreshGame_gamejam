@@ -5,17 +5,19 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	public GameObject hookPrefab;
 
-	// Use this for initialization
+	private GameObject hookHand;
+
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
+		hookHand = GameObject.Find("ThreshHandHook");
+		if(!hookHand){
+			Debug.LogError("Can't find ThreshHandHook GameObject");
+		}
+	}	
 
 	void HookThrow() {
 		float angle;
 
-		GameObject hookInstance = Instantiate (hookPrefab, transform.position, Quaternion.identity) as GameObject;
+		GameObject hookInstance = Instantiate (hookPrefab, hookHand.transform.position, Quaternion.identity) as GameObject;
 
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	
@@ -33,8 +35,12 @@ public class ThreshBehaviour : MonoBehaviour {
 
 		if (Input.GetButtonDown("Fire1")){
 			if (GameObject.FindObjectsOfType<HookBehaviour>().Length == 0){
-			HookThrow();
+				HookThrow();
 			}
 		}
+	}
+
+	public GameObject GetHandHook(){
+		return hookHand;
 	}
 }

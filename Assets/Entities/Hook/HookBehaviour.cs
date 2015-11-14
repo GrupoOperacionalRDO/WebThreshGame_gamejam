@@ -2,13 +2,15 @@
 using System.Collections;
 
 public class HookBehaviour : MonoBehaviour {
+
 	private ThreshBehaviour thresh;
 	private LineRenderer lineRender;
 
 	void Configure(){
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 		lineRender = GetComponent<LineRenderer> ();
- 		lineRender.SetPosition(0, thresh.transform.position);
+		GameObject hookHand = thresh.GetHandHook();
+		lineRender.SetPosition(0, hookHand.transform.position);
 		lineRender.SetPosition (1, transform.position);
 	}
 

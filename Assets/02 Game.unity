@@ -87,7 +87,7 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &897554679
+--- !u!1001 &178232827
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -100,7 +100,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413522, guid: 53ae623756a6d8d4ba463909517d4783, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 413522, guid: 53ae623756a6d8d4ba463909517d4783, type: 2}
       propertyPath: m_LocalPosition.z
@@ -125,6 +125,10 @@ Prefab:
     - target: {fileID: 413522, guid: 53ae623756a6d8d4ba463909517d4783, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 126448, guid: 53ae623756a6d8d4ba463909517d4783, type: 2}
+      propertyPath: m_Name
+      value: ThreshHandHook
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53ae623756a6d8d4ba463909517d4783, type: 2}
