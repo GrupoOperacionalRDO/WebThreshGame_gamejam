@@ -16,15 +16,14 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	void HookThrow() {
 		float angle;
-
-		GameObject hookInstance = Instantiate (hookPrefab, hookHand.transform.position, Quaternion.identity) as GameObject;
+		Vector3 hookPos = hookHand.transform.position;
+		GameObject hookInstance = Instantiate (hookPrefab, hookPos, Quaternion.identity) as GameObject;
 
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	
-		angle = Mathf.Atan2((mousePos.x - transform.position.x), (mousePos.y - transform.position.y)) * Mathf.Rad2Deg;
+		angle = Mathf.Atan2((mousePos.x - hookPos.x), (mousePos.y - hookPos.y)) * Mathf.Rad2Deg;
 
 		hookInstance.transform.Rotate (0, 0, -angle);
-
 
 		hookInstance.GetComponent<Rigidbody2D>().velocity = hookInstance.transform.up * 15;
 
