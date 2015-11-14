@@ -4,23 +4,22 @@ using System.Collections;
 public class ThreshBehaviour : MonoBehaviour {
 
 	public GameObject hookPrefab;
-	
-	private ThreshThrow throwHook;
+
 	private GameObject hookHand;
 	private Vector3 positionThrow;
 
 	void Start () {
-		throwHook = GetComponentInChildren<ThreshThrow>();
 		hookHand = GameObject.Find("ThreshHandHook");
 		if(!hookHand){
 			Debug.LogError("Can't find ThreshHandHook GameObject");
 		}
 	}	
 
+
 	void Update () {
 		if (Input.GetButtonDown("ThrowHook")){
 			if (GameObject.FindObjectsOfType<HookBehaviour>().Length == 0){
-				throwHook.SetThrowing(true);
+				EventManager.HandleMessage("OnHookCreated");
 				positionThrow = Input.mousePosition;
 			}
 		}

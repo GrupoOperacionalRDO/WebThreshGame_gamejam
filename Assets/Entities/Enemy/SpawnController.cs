@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SpawnController : MonoBehaviour {
 	
@@ -14,6 +15,9 @@ public class SpawnController : MonoBehaviour {
 			Debug.LogError("No instance of enemy found");
 		}
 		InstantiateEnemy ();
+	}
+	void aeCaraih(){
+		print (name);
 	}
 
 	void InstantiateEnemy(){

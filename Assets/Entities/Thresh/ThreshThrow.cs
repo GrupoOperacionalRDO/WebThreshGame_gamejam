@@ -11,10 +11,16 @@ public class ThreshThrow : MonoBehaviour {
 	void Start(){
 		thresh = GetComponentInParent<ThreshBehaviour>();
 		animator = GetComponent<Animator>();
+		EventManager.AddListener("OnHookDestroyed", this.gameObject);
+		EventManager.AddListener("OnHookCreated", this.gameObject);
 	}
 
-	public void SetThrowing(bool th){
-		animator.SetBool(HOOK_THROW, th);
+	void OnHookCreated(){
+		animator.SetBool(HOOK_THROW, true);
+	}
+
+	void OnHookDestroyed(){
+		animator.SetBool(HOOK_THROW, false);
 	}
 
 	void HookThrow(){
