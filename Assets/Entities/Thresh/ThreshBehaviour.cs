@@ -31,8 +31,7 @@ public class ThreshBehaviour : MonoBehaviour {
 	}
 
 	void Update () {
-
-		if (Input.GetButtonDown("Fire1")){
+		if (Input.GetButtonDown("ThrowHook")){
 			if (GameObject.FindObjectsOfType<HookBehaviour>().Length == 0){
 				HookThrow();
 			}
