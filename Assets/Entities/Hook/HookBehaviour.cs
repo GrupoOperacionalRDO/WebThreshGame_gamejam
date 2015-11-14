@@ -27,7 +27,7 @@ public class HookBehaviour : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll){
 		EnemyBehaviour en = coll.GetComponent<EnemyBehaviour>();
 		if(en){
-			Destroy (coll.gameObject);
+			en.DestroyEnemy();
 			DestroyHook();
 		}
 	}
