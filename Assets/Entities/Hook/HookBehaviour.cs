@@ -4,7 +4,6 @@ using System.Collections;
 public class HookBehaviour : MonoBehaviour {
 	private ThreshBehaviour thresh;
 	private LineRenderer lineRender;
-	public int[] elements;
 
 	void Configure(){
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
@@ -19,7 +18,6 @@ public class HookBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		lineRender.SetPosition (1, transform.position);
-
 	}
 		
 	void OnBecameInvisible(){
