@@ -3,14 +3,12 @@ using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		GameObject parent = GameObject.Find ("Enemies");
+		if(!parent){
+			parent = new GameObject("Enemies");
+		}
+		transform.parent = parent.transform;
 	}
 
 	void OnBecameInvisible(){

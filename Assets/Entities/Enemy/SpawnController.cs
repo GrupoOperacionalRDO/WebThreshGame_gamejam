@@ -28,7 +28,7 @@ public class SpawnController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (timer > 3) {
+		if (timer > 0.5) {
 			InstantiateEnemy();
 
 			timer = 0;
