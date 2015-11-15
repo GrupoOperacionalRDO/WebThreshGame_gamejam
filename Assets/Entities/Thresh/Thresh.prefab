@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.27999997, y: -.699999988, z: 0}
+  m_LocalPosition: {x: -.256999999, y: -.528999984, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 479704}
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hookPrefab: {fileID: 188046, guid: c39fd56348a8a614a91a79a0e1bd6f27, type: 2}
+  speed: 0
 --- !u!114 &11498502
 MonoBehaviour:
   m_ObjectHideFlags: 1

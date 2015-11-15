@@ -7,7 +7,7 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	private GameObject hookHand;
 	private Vector3 positionThrow;
-	public float speed = 225.0f;
+	public float speed = 15.0f;
 
 	void Start () {
 		hookHand = GameObject.Find("ThreshHandHook");
@@ -19,7 +19,6 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetButtonDown("ThrowHook")){
-			print (GameObject.FindObjectsOfType<HookBehaviour>().Length);
 			if (GameObject.FindObjectsOfType<HookBehaviour>().Length == 0){
 				EventManager.HandleMessage("OnHookCreated");
 				positionThrow = Input.mousePosition;

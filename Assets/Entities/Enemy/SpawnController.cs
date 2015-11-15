@@ -16,9 +16,6 @@ public class SpawnController : MonoBehaviour {
 		}
 		InstantiateEnemy ();
 	}
-	void aeCaraih(){
-		print (name);
-	}
 
 	void InstantiateEnemy(){
 

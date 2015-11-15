@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 475152}
-  - 114: {fileID: 11477422}
+  - 114: {fileID: 11432600}
   m_Layer: 0
   m_Name: UpgradeController
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11477422
+--- !u!114 &11432600
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -39,6 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fd25bfd0c7b44aebc2ec03f24f08fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thresh: {fileID: 0}
+  scrObject: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
