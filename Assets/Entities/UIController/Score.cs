@@ -6,7 +6,7 @@ public class Score : MonoBehaviour {
 
 	private ThreshBehaviour thresh;
 	private GameObject upgradeController;
-	private int score = 100;
+	private int score;
 	private Text scoreTxt;
 	
 	

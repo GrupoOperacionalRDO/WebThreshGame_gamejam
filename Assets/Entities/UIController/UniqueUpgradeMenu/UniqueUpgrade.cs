@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class UniqueUpgrade : MonoBehaviour {
 	private ThreshBehaviour thresh;
 	public GameObject scoreGameObject;
+	
+	public GameObject bounceButton;
+	public GameObject multipleHookButton;
 
 	private int score;
 	private Score scr;
@@ -35,6 +39,7 @@ public class UniqueUpgrade : MonoBehaviour {
 		if ((score - bounceCost) >= 0) {
 			scr.SetScore (score - bounceCost);
 			thresh.bounce = true;
+			bounceButton.GetComponentInChildren<Button>().interactable = false;
 		}
 	}
 
@@ -47,6 +52,7 @@ public class UniqueUpgrade : MonoBehaviour {
 		if ((score - multipleHookCost) >= 0) {
 			scr.SetScore (score - multipleHookCost);
 			thresh.multipleHooks = true;
+			multipleHookButton.GetComponentInChildren<Button>().interactable = false;
 		}
 	}
 }

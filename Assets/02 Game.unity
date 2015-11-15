@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 20667387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 303.527283, y: 161.36235, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1386018083}
@@ -201,100 +201,35 @@ Prefab:
       propertyPath: m_Name
       value: BounceUnqUpgradeButton
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1171314685}
     - target: {fileID: 11476104, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 39e22f3c382314ddb8afb62022cee018,
         type: 3}
-    - target: {fileID: 22486252, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 11.8999996
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_Transition
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 22486252, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -8.10000038
-      objectReference: {fileID: 0}
-    - target: {fileID: 22457956, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -31.2999992
-      objectReference: {fileID: 0}
-    - target: {fileID: 22457956, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -.600000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 22443914, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 14.8999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 22443914, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 6.9000001
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83e0930b621bd4589b2f4fe44209f0a6,
+        type: 3}
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1171314685}
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BounceUpgrade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &109304791 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 128516, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-  m_PrefabInternal: {fileID: 2120450202}
---- !u!114 &109304793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 109304791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
-    m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 109304794}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1171314685}
-        m_MethodName: MultipleHooksUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &109304794 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11476104, guid: 9b1ba3157c03a6b459e580a931a4b60f,
-    type: 2}
-  m_PrefabInternal: {fileID: 2120450202}
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &135862050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,11 +1480,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 475152, guid: 836921bee5b2446dda57a10e412aaf23, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 137.383667
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 475152, guid: 836921bee5b2446dda57a10e412aaf23, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.45141602
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 475152, guid: 836921bee5b2446dda57a10e412aaf23, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1688,11 +1623,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 410554, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.796021
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 410554, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25.9373932
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 410554, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1750,11 +1685,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -303.527283
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -161.36235
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1784,6 +1719,14 @@ Prefab:
       propertyPath: scoreGameObject
       value: 
       objectReference: {fileID: 470134777}
+    - target: {fileID: 11400982, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
+      propertyPath: bounceButton
+      value: 
+      objectReference: {fileID: 306511542}
+    - target: {fileID: 11400982, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
+      propertyPath: multipleHookButton
+      value: 
+      objectReference: {fileID: 1546288783}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
   m_IsPrefabParent: 0
@@ -1856,68 +1799,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261788906}
---- !u!1 &1285380011 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 128516, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-  m_PrefabInternal: {fileID: 39384053}
---- !u!114 &1285380012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1285380011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
-    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
-    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
-    m_ColorMultiplier: 1
-    m_FadeDuration: .100000001
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1285380013}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1171314685}
-        m_MethodName: BounceUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1285380013 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11476104, guid: 9b1ba3157c03a6b459e580a931a4b60f,
-    type: 2}
-  m_PrefabInternal: {fileID: 39384053}
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1329754489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2891,43 +2772,23 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1171314685}
     - target: {fileID: 188596, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_Name
       value: MultipleHooksUnqUpgradeButton
       objectReference: {fileID: 0}
-    - target: {fileID: 11413162, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_Text
-      value: Multi-Hook
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_Transition
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11476104, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_Sprite
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_SpriteState.m_DisabledSprite
       value: 
-      objectReference: {fileID: 21300000, guid: cb9813f405a2943e7acdca607be75c18,
+      objectReference: {fileID: 21300000, guid: 3beb81424485f48f8937417fe8823e69,
         type: 3}
-    - target: {fileID: 22486252, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 22457956, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -31.2999992
-      objectReference: {fileID: 0}
-    - target: {fileID: 22443914, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 22486252, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -6.80000019
-      objectReference: {fileID: 0}
-    - target: {fileID: 22457956, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: .699999988
-      objectReference: {fileID: 0}
-    - target: {fileID: 22443914, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 8.19999981
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
   m_IsPrefabParent: 0
