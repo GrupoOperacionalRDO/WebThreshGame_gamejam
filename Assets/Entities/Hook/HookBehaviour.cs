@@ -14,7 +14,7 @@ public class HookBehaviour : MonoBehaviour {
 
 	protected void Configure(){
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
-		hookCord = GameObject.Find("HookLinePoint");
+		hookCord = transform.FindChild("HookLinePoint").gameObject;
 		thisRigidbody = GetComponent<Rigidbody2D>();
 		lineRender = GetComponent<LineRenderer> ();
 		hookHand = thresh.GetHandHook();
@@ -42,7 +42,7 @@ public class HookBehaviour : MonoBehaviour {
 		lineRender.material.mainTextureScale = new Vector2(distance * 2,  1);
 	}
 
-	void Update () {
+	protected void Update () {
 		UpdateHandler ();
 	}
 

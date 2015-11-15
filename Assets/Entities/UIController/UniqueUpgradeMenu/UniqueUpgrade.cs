@@ -34,4 +34,15 @@ public class UniqueUpgrade : MonoBehaviour {
 		}
 	}
 
+	public void MultipleHooksUpgrade(){
+		if (thresh.multipleHooks) {
+			return;
+		}
+
+		ScoreHandler ();
+		if ((score - 2) >= 0) {
+			scr.SetScore (score - 2);
+			thresh.multipleHooks = true;
+		}
+	}
 }
