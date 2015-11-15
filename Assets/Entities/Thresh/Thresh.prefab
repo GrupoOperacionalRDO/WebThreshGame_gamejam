@@ -116,7 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hookPrefab: {fileID: 188046, guid: c39fd56348a8a614a91a79a0e1bd6f27, type: 2}
-  speed: 0
+  speed: 15
+  maxRange: 6
+  value: 1
 --- !u!114 &11498502
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,7 +7,7 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	private GameObject hookHand;
 	private Vector3 positionThrow;
-	public float speed = 15.0f, maxRange = 0;
+	public float speed = 15.0f, maxRange = 3;
 	public int value = 1;
 
 	void Start () {
@@ -33,6 +33,6 @@ public class ThreshBehaviour : MonoBehaviour {
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(positionThrow);
 		angle = Mathf.Atan2((mousePos.x - hookPos.x), (mousePos.y - hookPos.y)) * Mathf.Rad2Deg;
 		hookInstance.transform.Rotate (0, 0, -angle);
-		hookInstance.GetComponent<Rigidbody2D>().velocity = hookInstance.transform.up * speed;
+		hookInstance.GetComponent<HookBehaviour>().SetVelocity(speed);
 	}
 }

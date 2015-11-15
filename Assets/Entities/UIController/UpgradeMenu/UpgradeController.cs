@@ -39,7 +39,7 @@ public class UpgradeController : MonoBehaviour {
 		ScoreHandler ();
 		if ((score - 2) >= 0) {
 			scr.SetScore(score -2);
-			thresh.maxRange -= 0.5f;
+			thresh.maxRange += 3f;
 		}
 	}
 }

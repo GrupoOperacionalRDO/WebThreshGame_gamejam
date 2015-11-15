@@ -7,7 +7,6 @@ public class Score : MonoBehaviour {
 	private ThreshBehaviour thresh;
 	private int score;
 	private Text scoreTxt;
-	public int value = 1;
 
 	public void SetScore(int scr){
 		score = scr;

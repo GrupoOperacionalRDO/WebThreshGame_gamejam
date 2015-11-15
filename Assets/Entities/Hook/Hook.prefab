@@ -219,6 +219,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.79999995
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: AE
+      value: 
+      objectReference: {fileID: 149720, guid: b6fe5a99aef47df489ab9340e4ce9e6c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188046}

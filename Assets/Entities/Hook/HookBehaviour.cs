@@ -5,20 +5,33 @@ public class HookBehaviour : MonoBehaviour {
 
 	private ThreshBehaviour thresh;
 	private LineRenderer lineRender;
+	private Rigidbody2D thisRigidbody;
 	private GameObject hookHand;
 	private GameObject hookCord;
+
+	private float speed;
+	private float timeCounter;
 
 	void Configure(){
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 		hookCord = GameObject.Find("HookLinePoint");
+		thisRigidbody = GetComponent<Rigidbody2D>();
 		lineRender = GetComponent<LineRenderer> ();
 		hookHand = thresh.GetHandHook();
 		lineRender.SetPosition(0, hookHand.transform.position);
 		lineRender.SetPosition (1, hookCord.transform.position);
 	}
 
-	void Start(){
+	void Awake(){
 		Configure ();
+	}
+
+	public void SetVelocity(float speed){
+		if(!thisRigidbody){
+			thisRigidbody = GetComponent<Rigidbody2D>();
+		}
+		this.speed = speed;
+		thisRigidbody.velocity = transform.up * speed;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -37,7 +50,9 @@ public class HookBehaviour : MonoBehaviour {
 	}
 
 	void MaxRangeDestroy(){
-		if (transform.position.y < thresh.maxRange) { 
+		timeCounter += Time.deltaTime;
+		float distance = speed * timeCounter;
+		if (distance > thresh.maxRange) { 
 			DestroyHook ();
 		}
 	}
