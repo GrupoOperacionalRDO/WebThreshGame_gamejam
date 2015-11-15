@@ -7,15 +7,15 @@ public class UniqueUpgrade : MonoBehaviour {
 
 	private int score;
 	private Score scr;
+	
+	private int bounceCost = 2;
 
-	// Use this for initialization
 	void Start () {
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public int GetBounceCost(){
+		return bounceCost;
 	}
 
 	void ScoreHandler(){
@@ -24,6 +24,9 @@ public class UniqueUpgrade : MonoBehaviour {
 	}
 
 	public void BounceUpgrade(){
+		if(thresh.bounce){
+			return;
+		}
 		ScoreHandler ();
 		if ((score - 2) >= 0) {
 			scr.SetScore (score - 2);
