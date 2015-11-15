@@ -2,19 +2,23 @@
 using System.Collections;
 
 public class UpgradeController : MonoBehaviour {
-	[SerializeField] private ThreshBehaviour thresh;
+	private ThreshBehaviour thresh;
 	public GameObject scrObject;
-	
+	private int score;
+	private Score scr;
 
 	// Use this for initialization
 	void Awake () {
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
+	}
 
+	void ScoreHandler(){
+		scr = scrObject.GetComponent<Score> ();
+		score = scr.GetScore ();
 	}
 
 	public void OnSpeedButtonPress(){
-		Score scr = scrObject.GetComponent<Score> ();
-		int score = scr.GetScore ();
+		ScoreHandler ();
 		if ((score - 2) >= 0) {
 			scr.SetScore (score - 2);
 			thresh.speed += 10;
@@ -23,15 +27,19 @@ public class UpgradeController : MonoBehaviour {
 	}
 	
 	public void OnSoulButtonPress(){
-		Score scr = scrObject.GetComponent<Score> ();
-		int score = scr.GetScore ();
+		ScoreHandler ();
 		if ((score - 2) >= 0) {
 			scr.SetScore (score - 2);
-			scr.value += 1;
+			thresh.value += 1;
 			
 		}
 	}
-	// Update is called once per frame
-	void Update () {
+
+	public void OnRangeButtonPress(){
+		ScoreHandler ();
+		if ((score - 2) >= 0) {
+			scr.SetScore(score -2);
+			thresh.maxRange -= 0.5f;
+		}
 	}
 }

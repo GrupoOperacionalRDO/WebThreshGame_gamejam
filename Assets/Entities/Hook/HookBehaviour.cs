@@ -22,6 +22,7 @@ public class HookBehaviour : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		MaxRangeDestroy ();
 		lineRender.SetPosition (1, hookCord.transform.position);
 		float distance = Vector2.Distance(hookHand.transform.position, hookCord.transform.position);
 		lineRender.material.mainTextureScale = new Vector2(distance * 2,  1);
@@ -35,8 +36,10 @@ public class HookBehaviour : MonoBehaviour {
 		}
 	}
 
-	void OnBecameInvisible(){
-		DestroyHook();
+	void MaxRangeDestroy(){
+		if (transform.position.y < thresh.maxRange) { 
+			DestroyHook ();
+		}
 	}
 
 	void DestroyHook(){

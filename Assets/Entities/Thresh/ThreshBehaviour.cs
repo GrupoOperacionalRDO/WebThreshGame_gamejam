@@ -7,7 +7,8 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	private GameObject hookHand;
 	private Vector3 positionThrow;
-	public float speed = 15.0f;
+	public float speed = 15.0f, maxRange = 0;
+	public int value = 1;
 
 	void Start () {
 		hookHand = GameObject.Find("ThreshHandHook");
