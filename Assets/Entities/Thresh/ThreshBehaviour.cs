@@ -16,31 +16,22 @@ public class ThreshBehaviour : MonoBehaviour {
 		}
 	}	
 
-
-	void Update () {
-		if (Input.GetButtonDown("ThrowHook")){
-			if (GameObject.FindObjectsOfType<HookBehaviour>().Length == 0){
-				EventManager.HandleMessage("OnHookCreated");
-				positionThrow = Input.mousePosition;
-			}
-		}
-	}
-
 	public GameObject GetHandHook(){
 		return hookHand;
+	}
+
+	public void StartHookThrow(){
+		EventManager.HandleMessage("OnHookCreated");
+		positionThrow = Input.mousePosition;
 	}
 	
 	public void HookThrow() {
 		float angle;
 		Vector3 hookPos = hookHand.transform.position;
 		GameObject hookInstance = Instantiate (hookPrefab, hookPos, Quaternion.identity) as GameObject;
-		
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(positionThrow);
-		
 		angle = Mathf.Atan2((mousePos.x - hookPos.x), (mousePos.y - hookPos.y)) * Mathf.Rad2Deg;
-		
 		hookInstance.transform.Rotate (0, 0, -angle);
-		
 		hookInstance.GetComponent<Rigidbody2D>().velocity = hookInstance.transform.up * speed;
 	}
 }
