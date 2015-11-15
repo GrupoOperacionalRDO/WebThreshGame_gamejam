@@ -59,12 +59,12 @@ public class ThreshBehaviour : MonoBehaviour {
 
 		if (multipleHooks) {
 			GameObject hookInstance1 = Instantiate (hookPrefabChild1, hookPos, Quaternion.identity) as GameObject;
-			hookInstance1.transform.Rotate (0, 0, -angle + 30);
+			hookInstance1.transform.Rotate (0, 0, -angle - 30);
 			hookInstance1.GetComponent<SecondaryHookBehaviour> ().SetVelocity (speed);
 
 
 			GameObject hookInstance2 = Instantiate (hookPrefabChild2, hookPos, Quaternion.identity) as GameObject;
-			hookInstance2.transform.Rotate (0, 0, -angle - 30);
+			hookInstance2.transform.Rotate (0, 0, -angle + 30);
 			hookInstance2.GetComponent<SecondaryHookBehaviour> ().SetVelocity (speed);
 		}
 	}

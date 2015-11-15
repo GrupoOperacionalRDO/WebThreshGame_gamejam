@@ -39,7 +39,7 @@ public class UpgradeController : MonoBehaviour {
 		return incomeLevel;
 	}
 
-	void ScoreHandler(){
+	 void ScoreHandler(){
 		scr = scoreGameObject.GetComponent<Score> ();
 		score = scr.GetScore ();
 	}
@@ -48,7 +48,7 @@ public class UpgradeController : MonoBehaviour {
 		ScoreHandler ();
 		if ((score - speedCost) >= 0) {
 			scr.SetScore (score - speedCost);
-			thresh.speed += 10;
+			thresh.speed += 0.5f;
 			speedLevel++;
 		}
 	}
