@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ThreshBehaviour : MonoBehaviour {
 
-	public GameObject hookPrefab, hookHand;
+	public GameObject hookPrefab, hookHand, hookPrefabChild1;
 	public float speed = 15.0f, maxRange = 3;
 	public int value = 1;
 	public bool bounce;
@@ -52,9 +52,9 @@ public class ThreshBehaviour : MonoBehaviour {
 	}
 
 	public void HookThrow() {
-			GameObject hookInstance = Instantiate (hookPrefab, hookPos, Quaternion.identity) as GameObject;
-			hookInstance.transform.Rotate (0, 0, -angle);
-			hookInstance.GetComponent<HookBehaviour> ().SetVelocity (speed);
+		GameObject hookInstance = Instantiate (hookPrefab, hookPos, Quaternion.identity) as GameObject;
+		hookInstance.transform.Rotate (0, 0, -angle);
+		hookInstance.GetComponent<HookBehaviour> ().SetVelocity (speed);
 
 	}
 }
