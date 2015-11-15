@@ -42,7 +42,7 @@ public class HookBehaviour : MonoBehaviour {
 		lineRender.material.mainTextureScale = new Vector2(distance * 2,  1);
 	}
 
-	protected void Update () {
+	protected virtual void Update () {
 		UpdateHandler ();
 	}
 
@@ -86,8 +86,12 @@ public class HookBehaviour : MonoBehaviour {
 		}
 	}
 
-	protected void DestroyHook(){
+	protected virtual void DestroyHook(){
 		EventManager.HandleMessage("OnHookDestroyed");
+		SecondaryHookBehaviour[] secondaries = GameObject.FindObjectsOfType<SecondaryHookBehaviour>();
+		foreach(SecondaryHookBehaviour sh in secondaries){
+			sh.DestroyHook();
+		}
 		Destroy (this.gameObject);
 	}
 }

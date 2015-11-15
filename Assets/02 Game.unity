@@ -1655,6 +1655,10 @@ Prefab:
       propertyPath: incomeButton
       value: 
       objectReference: {fileID: 637804848}
+    - target: {fileID: 11420402, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
+      propertyPath: multipleHookButton
+      value: 
+      objectReference: {fileID: 1546288783}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
   m_IsPrefabParent: 0
@@ -2252,6 +2256,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1532706956}
+--- !u!1 &1546288783 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 188596, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+  m_PrefabInternal: {fileID: 2120450202}
 --- !u!1 &1550178197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,7 +2375,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467676, guid: 30ba0799f7b79194283f25a4b786c4bf, type: 2}
       propertyPath: m_LocalScale.x
-      value: 37.0119743
+      value: 33.969326
       objectReference: {fileID: 0}
     - target: {fileID: 467676, guid: 30ba0799f7b79194283f25a4b786c4bf, type: 2}
       propertyPath: m_LocalScale.y
@@ -2393,7 +2401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1813948669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2842,7 +2850,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22407026, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -40
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 22407026, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_SizeDelta.x
@@ -2850,7 +2858,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22407026, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 22407026, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_AnchorMin.x
@@ -2886,7 +2894,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 188596, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_Name
-      value: BounceUnqUpgradeButton (1)
+      value: MultipleHooksUnqUpgradeButton
       objectReference: {fileID: 0}
     - target: {fileID: 11413162, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_Text

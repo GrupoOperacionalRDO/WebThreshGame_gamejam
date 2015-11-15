@@ -9,6 +9,7 @@ public class UniqueUpgrade : MonoBehaviour {
 	private Score scr;
 	
 	private int bounceCost = 2;
+	private int multipleHookCost = 2;
 
 	void Start () {
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
@@ -16,6 +17,9 @@ public class UniqueUpgrade : MonoBehaviour {
 
 	public int GetBounceCost(){
 		return bounceCost;
+	}
+	public int GetMultipleHookCost(){
+		return multipleHookCost;
 	}
 
 	void ScoreHandler(){
@@ -28,8 +32,8 @@ public class UniqueUpgrade : MonoBehaviour {
 			return;
 		}
 		ScoreHandler ();
-		if ((score - 2) >= 0) {
-			scr.SetScore (score - 2);
+		if ((score - bounceCost) >= 0) {
+			scr.SetScore (score - bounceCost);
 			thresh.bounce = true;
 		}
 	}
@@ -40,8 +44,8 @@ public class UniqueUpgrade : MonoBehaviour {
 		}
 
 		ScoreHandler ();
-		if ((score - 2) >= 0) {
-			scr.SetScore (score - 2);
+		if ((score - multipleHookCost) >= 0) {
+			scr.SetScore (score - multipleHookCost);
 			thresh.multipleHooks = true;
 		}
 	}
