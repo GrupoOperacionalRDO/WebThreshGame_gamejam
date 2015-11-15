@@ -2,9 +2,12 @@
 using System.Collections;
 
 public class Wall : MonoBehaviour {
-	// Use this for initialization
+
+	public float multiplier = 1f;
+
 	void Start () {
-		GetComponent<BoxCollider2D> ().size = General.GetCameraSize ();
+		Vector3 newSize = General.GetCameraSize() * multiplier;
+		GetComponent<BoxCollider2D> ().size = newSize;
 	}
 
 	void OnTriggerExit2D(Collider2D collision){

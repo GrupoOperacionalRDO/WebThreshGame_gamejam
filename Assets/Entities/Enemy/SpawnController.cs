@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class SpawnController : MonoBehaviour {
 	
 	public GameObject enemyPrefab;
+	public float spawnTime = 3f;
 
 	private float timer;
 	private float minX = -21.0f, minY = -5.0f, maxX = -19.0f, maxY = 4.0f;
@@ -29,7 +30,7 @@ public class SpawnController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (timer > 0.5) {
+		if (timer > spawnTime) {
 			InstantiateEnemy();
 
 			timer = 0;

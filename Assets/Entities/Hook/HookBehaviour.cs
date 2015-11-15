@@ -51,10 +51,21 @@ public class HookBehaviour : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D coll){
 		Wall wall = coll.GetComponent<Wall>();
 		if(wall){
-			print ("Wall?");
 			if (thresh.bounce) {
-				print ("Mudou velocidade");
-				SetVelocity (-speed);
+				float angle = 0;
+				Vector3 bounds = General.GetCameraSize();
+				float topBound = bounds.y / 2;
+				float rightBound = bounds.x / 2;
+
+				if(Mathf.Abs(transform.position.y) >= topBound){
+					float ang = 90 - transform.eulerAngles.z;
+					angle = transform.eulerAngles.z + (2 * ang);
+				} else if(Mathf.Abs(transform.position.x) >= rightBound){
+					angle = -transform.eulerAngles.z;
+				}
+
+				transform.eulerAngles = new Vector3(0, 0, angle);
+				SetVelocity(speed);
 			} else {
 				DestroyHook();
 			}
