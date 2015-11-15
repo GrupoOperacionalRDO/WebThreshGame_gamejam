@@ -24,7 +24,6 @@ public class HookBehaviour : MonoBehaviour {
 
 	void Awake(){
 		Configure ();
-		EventManager.AddListener ("OnWallHit", this.gameObject);
 	}
 
 	public void SetVelocity(float speed){
@@ -49,18 +48,24 @@ public class HookBehaviour : MonoBehaviour {
 			DestroyHook();
 		}
 	}
+	void OnTriggerExit2D(Collider2D coll){
+		Wall wall = coll.GetComponent<Wall>();
+		if(wall){
+			print ("Wall?");
+			if (thresh.bounce) {
+				print ("Mudou velocidade");
+				SetVelocity (-speed);
+			} else {
+				DestroyHook();
+			}
+		}
+	}
 
 	void MaxRangeDestroy(){
 		timeCounter += Time.deltaTime;
 		float distance = speed * timeCounter;
 		if (distance > thresh.maxRange) { 
 			DestroyHook ();
-		}
-	}
-
-	void OnWallHit(){
-		if (thresh.bounce) {
-			SetVelocity (-speed);
 		}
 	}
 
