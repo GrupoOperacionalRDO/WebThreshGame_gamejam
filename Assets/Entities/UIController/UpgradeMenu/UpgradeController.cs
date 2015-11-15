@@ -11,6 +11,10 @@ public class UpgradeController : MonoBehaviour {
 	private int speedCost = 2;
 	private int incomeCost = 2;
 
+	private int rangeLevel = 0;
+	private int speedLevel = 0;
+	private int incomeLevel = 0;
+
 	void Awake () {
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 	}
@@ -24,6 +28,16 @@ public class UpgradeController : MonoBehaviour {
 	public int GetIncomeCost(){
 		return incomeCost;
 	}
+	
+	public int GetRangeLevel(){
+		return rangeLevel;
+	}
+	public int GetSpeedLevel(){
+		return speedLevel;
+	}
+	public int GetIncomeLevel(){
+		return incomeLevel;
+	}
 
 	void ScoreHandler(){
 		scr = scoreGameObject.GetComponent<Score> ();
@@ -35,6 +49,7 @@ public class UpgradeController : MonoBehaviour {
 		if ((score - speedCost) >= 0) {
 			scr.SetScore (score - speedCost);
 			thresh.speed += 10;
+			speedLevel++;
 		}
 	}
 	
@@ -43,6 +58,7 @@ public class UpgradeController : MonoBehaviour {
 		if ((score - incomeCost) >= 0) {
 			scr.SetScore (score - incomeCost);
 			thresh.value += 1;
+			incomeLevel++;
 		}
 	}
 
@@ -51,6 +67,7 @@ public class UpgradeController : MonoBehaviour {
 		if ((score - rangeCost) >= 0) {
 			scr.SetScore(score - rangeCost);
 			thresh.maxRange += 3f;
+			rangeLevel++;
 		}
 	}
 }

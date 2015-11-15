@@ -890,12 +890,6 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
---- !u!114 &837952076 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11424940, guid: 3820174f4c1d94e468c47b0cd5c13156,
-    type: 2}
-  m_PrefabInternal: {fileID: 637804846}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &852594730
 Prefab:
   m_ObjectHideFlags: 0
@@ -1198,17 +1192,17 @@ Prefab:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11431062, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
-      propertyPath: rangeLevelText
+      propertyPath: rangeButton
       value: 
-      objectReference: {fileID: 1899632672}
+      objectReference: {fileID: 889840659}
     - target: {fileID: 11431062, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
-      propertyPath: speedLevelText
+      propertyPath: speedButton
       value: 
-      objectReference: {fileID: 1847250360}
+      objectReference: {fileID: 243162897}
     - target: {fileID: 11431062, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
-      propertyPath: incomeLevelText
+      propertyPath: incomeButton
       value: 
-      objectReference: {fileID: 837952076}
+      objectReference: {fileID: 637804848}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
   m_IsPrefabParent: 0
@@ -1621,18 +1615,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30ba0799f7b79194283f25a4b786c4bf, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1847250360 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11424940, guid: 3820174f4c1d94e468c47b0cd5c13156,
-    type: 2}
-  m_PrefabInternal: {fileID: 243162895}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!114 &1899632672 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11424940, guid: 3820174f4c1d94e468c47b0cd5c13156,
-    type: 2}
-  m_PrefabInternal: {fileID: 852594730}
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &2038764672
 Prefab:
   m_ObjectHideFlags: 0
