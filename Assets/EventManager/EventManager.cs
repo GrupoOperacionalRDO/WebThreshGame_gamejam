@@ -26,6 +26,7 @@ public class EventManager : MonoBehaviour {
 		}
 		foreach(GameObject go in listenerDic[methodName]){
 			go.SendMessage(methodName, SendMessageOptions.DontRequireReceiver);
+			print ("Method: " + methodName + " Ob:" + go.name);
 		}
 	}
 }
