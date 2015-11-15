@@ -4,9 +4,10 @@ using System.Collections;
 public class ThreshBehaviour : MonoBehaviour {
 
 	public GameObject hookPrefab, hookHand;
-	private Vector3 positionThrow, hookPos;
 	public float angle, speed = 15.0f, maxRange = 3;
 	public int value = 1;
+
+	private Vector3 hookPos;
 
 	void Start () {
 		hookHand = GameObject.Find("ThreshHandHook");
@@ -21,7 +22,6 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	void Update(){
 		if(Input.GetMouseButtonDown(0)){
-			positionThrow = Input.mousePosition;
 			CalculateAngle();
 			if(CanCreateHook()){
 				EventManager.HandleMessage("OnHookCreated");
@@ -30,15 +30,14 @@ public class ThreshBehaviour : MonoBehaviour {
 	}
 
 	bool CanCreateHook(){
-		print (angle);
-		if(GameObject.FindObjectsOfType<HookBehaviour>().Length > 0){
+		if (General.IsPointerOverUIObject()){
 			return false;
-		}else if (General.IsPointerOverUIObject()){
+		}else if(GameObject.FindObjectsOfType<HookBehaviour>().Length > 0){
 			return false;
-		}else if (angle > 90 || angle < -90) {
-			return true;
+		}else if (angle <= 85 && angle >= -85) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	void CalculateAngle(){
