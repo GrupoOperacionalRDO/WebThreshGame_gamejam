@@ -25,8 +25,7 @@ public class EventManager : MonoBehaviour {
 			return;
 		}
 		foreach(GameObject go in listenerDic[methodName]){
-			if(!go){
-				listenerDic[methodName].Remove(go);
+			if(go == null){
 				continue;
 			}
 			go.SendMessage(methodName, SendMessageOptions.DontRequireReceiver);
