@@ -52,7 +52,6 @@ public class Score : MonoBehaviour {
 				speedCostText = text;
 				break;
 			}
-
 		}
 	}
 	void RangeButtonInitialize(){
