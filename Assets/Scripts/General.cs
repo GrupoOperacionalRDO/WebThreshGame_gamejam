@@ -30,4 +30,13 @@ public class General : MonoBehaviour {
 		uiRaycaster.Raycast(eventDataCurrentPosition, results);
 		return results.Count > 0;
 	}
+	/// <summary>
+	/// Cast a ray to test if screenPosition is over any UI object in canvas. This is a replacement
+	/// for IsPointerOverGameObject() which does not work on Android in 4.6.0f3
+	/// </summary>
+	public static Vector3 GetCameraSize () {
+		float quadHeight = Camera.main.orthographicSize * 2.0f;
+		float quadWidth = quadHeight * Screen.width / Screen.height;
+		return new Vector3(quadWidth, quadHeight, 1);
+	}
 }
