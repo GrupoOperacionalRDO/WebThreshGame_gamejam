@@ -21,11 +21,26 @@ public class ThreshBehaviour : MonoBehaviour {
 		return hookHand;
 	}
 
-	public void StartHookThrow(){
-		EventManager.HandleMessage("OnHookCreated");
-		positionThrow = Input.mousePosition;
+	void Update(){
+		if(Input.GetMouseButtonDown(0)){
+			if(CanCreateHook()){
+				EventManager.HandleMessage("OnHookCreated");
+				positionThrow = Input.mousePosition;
+			}
+		}
 	}
-	
+
+	bool CanCreateHook(){
+		if(GameObject.FindObjectsOfType<HookBehaviour>().Length > 0){
+			return false;
+		}
+
+		if (General.IsPointerOverUIObject()){
+			return false;
+		}
+		return true;
+	}
+
 	public void HookThrow() {
 		float angle;
 		Vector3 hookPos = hookHand.transform.position;

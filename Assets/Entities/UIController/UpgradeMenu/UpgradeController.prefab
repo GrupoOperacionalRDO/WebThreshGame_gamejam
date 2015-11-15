@@ -39,8 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7fd25bfd0c7b44aebc2ec03f24f08fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thresh: {fileID: 0}
-  scrObject: {fileID: 0}
+  scoreGameObject: {fileID: 168696}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

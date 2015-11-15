@@ -5,8 +5,13 @@ using System.Collections;
 public class Score : MonoBehaviour {
 
 	private ThreshBehaviour thresh;
+	private GameObject upgradeController;
 	private int score;
 	private Text scoreTxt;
+
+	public Text rangeLevelText;
+	public Text speedLevelText;
+	public Text incomeLevelText;
 
 	public void SetScore(int scr){
 		score = scr;
@@ -15,17 +20,20 @@ public class Score : MonoBehaviour {
 	public int GetScore(){
 		return score;
 	}
-	// Use this for initialization
-	void Start () {
 
+	void Awake () {
 		EventManager.AddListener ("OnEnemyDestroyed", this.gameObject);
 
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 
 		scoreTxt = GameObject.Find ("ScoreText").GetComponent<Text>();
-
 		if(!scoreTxt){
-			Debug.LogError("Can't find ScoreText");
+			Debug.LogError("Can't find the ScoreText");
+		}
+
+		upgradeController = GameObject.Find("UpgradeController");
+		if(!upgradeController){
+			Debug.LogError("Can't find the UpgradeController");
 		}
 	}
 
@@ -33,7 +41,12 @@ public class Score : MonoBehaviour {
 		score += thresh.value; 
 	}
 
-	void Update(){
+	void FixedUpdate(){
 		scoreTxt.text = "Score: " + score;
+		// Set the cost's value
+		UpgradeController uc = upgradeController.GetComponent<UpgradeController>();
+		rangeLevelText.text = uc.GetRangeCost().ToString();
+		speedLevelText.text = uc.GetSpeedCost().ToString();
+		incomeLevelText.text = uc.GetIncomeCost().ToString();
 	}
 }

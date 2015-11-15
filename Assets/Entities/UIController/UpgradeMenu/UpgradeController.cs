@@ -3,42 +3,53 @@ using System.Collections;
 
 public class UpgradeController : MonoBehaviour {
 	private ThreshBehaviour thresh;
-	public GameObject scrObject;
+	public GameObject scoreGameObject;
 	private int score;
 	private Score scr;
 
-	// Use this for initialization
+	private int rangeCost = 2;
+	private int speedCost = 2;
+	private int incomeCost = 2;
+
 	void Awake () {
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 	}
 
+	public int GetRangeCost(){
+		return rangeCost;
+	}
+	public int GetSpeedCost(){
+		return speedCost;
+	}
+	public int GetIncomeCost(){
+		return incomeCost;
+	}
+
 	void ScoreHandler(){
-		scr = scrObject.GetComponent<Score> ();
+		scr = scoreGameObject.GetComponent<Score> ();
 		score = scr.GetScore ();
 	}
 
-	public void OnSpeedButtonPress(){
+	public void UpgradeSpeed(){
 		ScoreHandler ();
-		if ((score - 2) >= 0) {
-			scr.SetScore (score - 2);
+		if ((score - speedCost) >= 0) {
+			scr.SetScore (score - speedCost);
 			thresh.speed += 10;
-
 		}
 	}
 	
-	public void OnSoulButtonPress(){
+	public void UpgradeIncome(){
 		ScoreHandler ();
-		if ((score - 2) >= 0) {
-			scr.SetScore (score - 2);
+		if ((score - incomeCost) >= 0) {
+			scr.SetScore (score - incomeCost);
 			thresh.value += 1;
-			
 		}
 	}
 
-	public void OnRangeButtonPress(){
+	public void UpgradeRange(){
 		ScoreHandler ();
-		if ((score - 2) >= 0) {
-			scr.SetScore(score -2);
+		if ((score - rangeCost) >= 0) {
+			scr.SetScore(score - rangeCost);
 			thresh.maxRange += 3f;
 		}
 	}
