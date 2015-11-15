@@ -4,8 +4,8 @@ using System.Collections;
 
 public class Score : MonoBehaviour {
 
-	private int score;
-	private Text scoreTxt;
+	public int score;
+	public Text scoreTxt;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +18,9 @@ public class Score : MonoBehaviour {
 
 	private void OnEnemyDestroyed (){
 		score ++;
+	}
+
+	void Update(){
 		scoreTxt.text = "Score: " + score;
 	}
 }

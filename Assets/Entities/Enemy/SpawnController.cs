@@ -7,7 +7,7 @@ public class SpawnController : MonoBehaviour {
 	public GameObject enemyPrefab;
 
 	private float timer;
-	private float minX = -21.0f, minY = -5.0f, maxX = -19.0f, maxY = 4.0f, speed = 8;
+	private float minX = -21.0f, minY = -5.0f, maxX = -19.0f, maxY = 4.0f;
 
 	// Use this for initialization
 	void Start () {

@@ -7,6 +7,7 @@ public class ThreshBehaviour : MonoBehaviour {
 
 	private GameObject hookHand;
 	private Vector3 positionThrow;
+	public float speed = 15.0f;
 
 	void Start () {
 		hookHand = GameObject.Find("ThreshHandHook");
@@ -40,7 +41,7 @@ public class ThreshBehaviour : MonoBehaviour {
 		
 		hookInstance.transform.Rotate (0, 0, -angle);
 		
-		hookInstance.GetComponent<Rigidbody2D>().velocity = hookInstance.transform.up * 15;
+		hookInstance.GetComponent<Rigidbody2D>().velocity = hookInstance.transform.up * speed;
 		
 	}
 }
