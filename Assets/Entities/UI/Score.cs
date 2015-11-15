@@ -5,19 +5,19 @@ using System.Collections;
 public class Score : MonoBehaviour {
 
 	private int score;
-	public GameObject scoreTxt;
+	private Text scoreTxt;
 
 	// Use this for initialization
 	void Start () {
 		EventManager.AddListener ("OnEnemyDestroyed", this.gameObject);
+		scoreTxt = GameObject.Find ("ScoreText").GetComponent<Text>();
+		if(!scoreTxt){
+			Debug.LogError("Can't find ScoreText");
+		}
 	}
 
 	private void OnEnemyDestroyed (){
 		score ++;
-		scoreTxt.GetComponent<Text> ().text = "Score: " + score;
-	}
-	// Update is called once per frame
-	void Update () {
-		
+		scoreTxt.text = "Score: " + score;
 	}
 }

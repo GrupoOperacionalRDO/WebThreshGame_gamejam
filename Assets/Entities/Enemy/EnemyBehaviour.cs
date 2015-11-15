@@ -24,6 +24,6 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	void OnBecameInvisible(){
-		DestroyEnemy();
+		Destroy(this.gameObject);
 	}
 }
