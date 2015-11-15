@@ -21,6 +21,16 @@ public class UpgradeController : MonoBehaviour {
 
 		}
 	}
+	
+	public void OnSoulButtonPress(){
+		Score scr = scrObject.GetComponent<Score> ();
+		int score = scr.GetScore ();
+		if ((score - 2) >= 0) {
+			scr.SetScore (score - 2);
+			scr.value += 1;
+			
+		}
+	}
 	// Update is called once per frame
 	void Update () {
 	}

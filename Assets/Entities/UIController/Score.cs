@@ -6,6 +6,7 @@ public class Score : MonoBehaviour {
 
 	private int score;
 	private Text scoreTxt;
+	public int value = 1;
 
 	public void SetScore(int scr){
 		score = scr;
@@ -26,7 +27,7 @@ public class Score : MonoBehaviour {
 	}
 
 	private void OnEnemyDestroyed (){
-		score ++;
+		score += value; 
 	}
 
 	void Update(){
