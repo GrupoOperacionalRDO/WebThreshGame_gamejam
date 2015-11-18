@@ -115,7 +115,6 @@ Transform:
   - {fileID: 1386018083}
   - {fileID: 470134781}
   - {fileID: 1126647526}
-  - {fileID: 1094396216}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1001 &39384053
@@ -204,7 +203,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1171314685}
+      objectReference: {fileID: 0}
     - target: {fileID: 11476104, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_Sprite
       value: 
@@ -542,10 +541,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d32cd927f2a664831b0b45fa5921cece, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &470134777 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 148032, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
-  m_PrefabInternal: {fileID: 1151774537}
 --- !u!114 &470134778 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11420402, guid: 4b3678255ea024eafb42aa1e8e9d1a9b,
@@ -1516,17 +1511,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11432600, guid: 836921bee5b2446dda57a10e412aaf23, type: 2}
-      propertyPath: scoreGameObject
-      value: 
-      objectReference: {fileID: 470134777}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 836921bee5b2446dda57a10e412aaf23, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1094396216 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-  m_PrefabInternal: {fileID: 1171314684}
 --- !u!4 &1126647526 stripped
 Transform:
   m_PrefabParentObject: {fileID: 475152, guid: 836921bee5b2446dda57a10e412aaf23, type: 2}
@@ -1659,10 +1646,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11420402, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
-      propertyPath: bounceButton
-      value: 
-      objectReference: {fileID: 306511542}
     - target: {fileID: 11441074, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
       propertyPath: rangeButton
       value: 
@@ -1676,72 +1659,16 @@ Prefab:
       value: 
       objectReference: {fileID: 637804848}
     - target: {fileID: 11420402, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
+      propertyPath: bounceButton
+      value: 
+      objectReference: {fileID: 306511542}
+    - target: {fileID: 11420402, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
       propertyPath: multipleHookButton
       value: 
       objectReference: {fileID: 1546288783}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1171314684
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 20667388}
-    m_Modifications:
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 437550, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400982, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: scoreGameObject
-      value: 
-      objectReference: {fileID: 470134777}
-    - target: {fileID: 11400982, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: bounceButton
-      value: 
-      objectReference: {fileID: 306511542}
-    - target: {fileID: 11400982, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-      propertyPath: multipleHookButton
-      value: 
-      objectReference: {fileID: 1546288783}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8220fd8a670c04f57aae09597922ed83, type: 2}
-  m_IsPrefabParent: 0
---- !u!114 &1171314685 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400982, guid: 8220fd8a670c04f57aae09597922ed83,
-    type: 2}
-  m_PrefabInternal: {fileID: 1171314684}
-  m_Script: {fileID: 11500000, guid: f4e2ba72a07e041238b6dd6610e2b3c2, type: 3}
 --- !u!1 &1261788906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1926,9 +1853,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 578057029}
   m_RootOrder: 0
-  m_AnchorMin: {x: 1, y: .5}
-  m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -49.5, y: -2.80001068}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -49.5, y: 160.199982}
   m_SizeDelta: {x: 63.4000015, y: 59}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1355117423

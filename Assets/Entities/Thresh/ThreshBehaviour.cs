@@ -6,7 +6,7 @@ public class ThreshBehaviour : MonoBehaviour {
 	public GameObject hookPrefab, hookPrefabChild1, hookPrefabChild2;
 	public float speed = 15.0f, maxRange = 3;
 	public int value = 1;
-	public bool bounce;
+	public bool bounce = false;
 	public bool multipleHooks = false;
 
 	private GameObject hookHand;
