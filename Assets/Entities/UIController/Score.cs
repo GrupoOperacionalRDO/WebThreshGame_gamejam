@@ -35,4 +35,8 @@ public class Score : MonoBehaviour {
 	void FixedUpdate(){
 		scoreTxt.text = "Score: " + score;
 	}
+
+	public void Teste(){
+		print ("Teste");
+	}
 }
