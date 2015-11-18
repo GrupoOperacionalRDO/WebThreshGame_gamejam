@@ -5,7 +5,6 @@ using System.Collections;
 public class Score : MonoBehaviour {
 
 	private ThreshBehaviour thresh;
-	private GameObject upgradeController;
 	private int score = 100;
 	private Text scoreTxt;
 	
@@ -18,11 +17,6 @@ public class Score : MonoBehaviour {
 		scoreTxt = GameObject.Find ("ScoreText").GetComponent<Text>();
 		if(!scoreTxt){
 			Debug.LogError("Can't find the ScoreText");
-		}
-		
-		upgradeController = GameObject.Find("UpgradeController");
-		if(!upgradeController){
-			Debug.LogError("Can't find the UpgradeController");
 		}
 	}
 
