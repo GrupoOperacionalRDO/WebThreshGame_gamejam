@@ -3,17 +3,18 @@ using System.Collections;
 
 public class ThreshBehaviour : MonoBehaviour {
 
-	public GameObject hookPrefab, hookHand, hookPrefabChild1, hookPrefabChild2;
+	public GameObject hookPrefab, hookPrefabChild1, hookPrefabChild2;
 	public float speed = 15.0f, maxRange = 3;
 	public int value = 1;
 	public bool bounce;
 	public bool multipleHooks = false;
 
+	private GameObject hookHand;
 	private float angle;
 	private Vector3 hookPos;
 
 	void Start () {
-		hookHand = GameObject.Find("ThreshHandHook");
+		hookHand = transform.FindChild("ThreshHandHook").gameObject;
 		if(!hookHand){
 			Debug.LogError("Can't find ThreshHandHook GameObject");
 		}
@@ -44,11 +45,8 @@ public class ThreshBehaviour : MonoBehaviour {
 	}
 
 	void CalculateAngle(){
-
 		hookPos = hookHand.transform.position;
-
 		Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		
 		angle = Mathf.Atan2((mousePos.x - hookPos.x), (mousePos.y - hookPos.y)) * Mathf.Rad2Deg;
 	}
 
@@ -61,7 +59,6 @@ public class ThreshBehaviour : MonoBehaviour {
 			GameObject hookInstance1 = Instantiate (hookPrefabChild1, hookPos, Quaternion.identity) as GameObject;
 			hookInstance1.transform.Rotate (0, 0, -angle - 30);
 			hookInstance1.GetComponent<SecondaryHookBehaviour> ().SetVelocity (speed);
-
 
 			GameObject hookInstance2 = Instantiate (hookPrefabChild2, hookPos, Quaternion.identity) as GameObject;
 			hookInstance2.transform.Rotate (0, 0, -angle + 30);

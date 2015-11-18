@@ -4,7 +4,7 @@ using System.Collections;
 
 public class UpgradeButton : MonoBehaviour {
 	
-	private GameObject upgradeController;
+	private UpgradeController upgradeController;
 	
 	public GameObject rangeButton;
 	public GameObject speedButton;
@@ -21,12 +21,22 @@ public class UpgradeButton : MonoBehaviour {
 	void Awake () {
 		InitializeButtonsText();
 
-		upgradeController = GameObject.Find("UpgradeController");
+		upgradeController = GameObject.FindObjectOfType<UpgradeController>();
 		if(!upgradeController){
 			Debug.LogError("Can't find the UpgradeController");
 		}
 	}
-	
+
+	public void OnRangeUpgradePressed(){
+		upgradeController.UpgradeRange();
+	}
+	public void OnSpeedUpgradePressed(){
+		upgradeController.UpgradeSpeed();
+	}
+	public void OnIncomeUpgradePressed(){
+		upgradeController.UpgradeIncome();
+	}
+
 	bool InitializeButtonsText(){
 		bool getData = false;
 		if(rangeButton.gameObject.activeInHierarchy){
@@ -85,17 +95,15 @@ public class UpgradeButton : MonoBehaviour {
 	}
 
 	void Update () {
-		UpgradeController uc = upgradeController.GetComponent<UpgradeController>();
-
 		if(InitializeButtonsText()){
 			// Set the cost's value
-			rangeCostText.text = uc.GetRangeCost().ToString();
-			speedCostText.text = uc.GetSpeedCost().ToString();
-			incomeCostText.text = uc.GetIncomeCost().ToString();
+			rangeCostText.text = upgradeController.GetRangeCost().ToString();
+			speedCostText.text = upgradeController.GetSpeedCost().ToString();
+			incomeCostText.text = upgradeController.GetIncomeCost().ToString();
 			// Set the level's value
-			rangeLevelText.text = uc.GetRangeLevel().ToString();
-			speedLevelText.text = uc.GetSpeedLevel().ToString();
-			incomeLevelText.text = uc.GetIncomeLevel().ToString();
+			rangeLevelText.text = upgradeController.GetRangeLevel().ToString();
+			speedLevelText.text = upgradeController.GetSpeedLevel().ToString();
+			incomeLevelText.text = upgradeController.GetIncomeLevel().ToString();
 		}
 	}
 }

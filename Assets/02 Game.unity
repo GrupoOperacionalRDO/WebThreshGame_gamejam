@@ -222,10 +222,10 @@ Prefab:
     - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1171314685}
+      objectReference: {fileID: 470134778}
     - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BounceUpgrade
+      value: OnBouceUpgradePressed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
@@ -403,10 +403,10 @@ Prefab:
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1076052791}
+      objectReference: {fileID: 470134779}
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeSpeed
+      value: OnSpeedUpgradePressed
       objectReference: {fileID: 0}
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -546,6 +546,18 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 148032, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
   m_PrefabInternal: {fileID: 1151774537}
+--- !u!114 &470134778 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11420402, guid: 4b3678255ea024eafb42aa1e8e9d1a9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1151774537}
+  m_Script: {fileID: 11500000, guid: 872b628bc927e0c4db8811b8c4b3eab9, type: 3}
+--- !u!114 &470134779 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11441074, guid: 4b3678255ea024eafb42aa1e8e9d1a9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1151774537}
+  m_Script: {fileID: 11500000, guid: a589ce464e1eaa54fa738622f94095cd, type: 3}
 --- !u!4 &470134781 stripped
 Transform:
   m_PrefabParentObject: {fileID: 410554, guid: 4b3678255ea024eafb42aa1e8e9d1a9b, type: 2}
@@ -1020,10 +1032,10 @@ Prefab:
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1076052791}
+      objectReference: {fileID: 470134779}
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeIncome
+      value: OnIncomeUpgradePressed
       objectReference: {fileID: 0}
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1335,10 +1347,10 @@ Prefab:
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1076052791}
+      objectReference: {fileID: 470134779}
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeRange
+      value: OnRangeUpgradePressed
       objectReference: {fileID: 0}
     - target: {fileID: 11449972, guid: 3820174f4c1d94e468c47b0cd5c13156, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1465,12 +1477,6 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
---- !u!114 &1076052791 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11432600, guid: 836921bee5b2446dda57a10e412aaf23,
-    type: 2}
-  m_PrefabInternal: {fileID: 1089276189}
-  m_Script: {fileID: 11500000, guid: b7fd25bfd0c7b44aebc2ec03f24f08fd, type: 3}
 --- !u!1001 &1089276189
 Prefab:
   m_ObjectHideFlags: 0
@@ -2775,7 +2781,7 @@ Prefab:
     - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1171314685}
+      objectReference: {fileID: 470134778}
     - target: {fileID: 188596, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
       propertyPath: m_Name
       value: MultipleHooksUnqUpgradeButton
@@ -2789,6 +2795,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 3beb81424485f48f8937417fe8823e69,
         type: 3}
+    - target: {fileID: 11462076, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMultipleHooksUpgradePressed
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b1ba3157c03a6b459e580a931a4b60f, type: 2}
   m_IsPrefabParent: 0

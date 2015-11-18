@@ -4,7 +4,7 @@ using System.Collections;
 
 public class UniqueUpgradeButton : MonoBehaviour {
 	
-	private GameObject upgradeController;
+	private UniqueUpgradeController upgradeController;
 	
 	public GameObject bounceButton;
 	public GameObject multipleHookButton;
@@ -15,9 +15,19 @@ public class UniqueUpgradeButton : MonoBehaviour {
 	void Awake () {
 		InitializeButtonsText();
 
-		upgradeController = GameObject.Find("UniqueUpgController");
+		upgradeController = GameObject.FindObjectOfType<UniqueUpgradeController>();
 		if(!upgradeController){
-			Debug.LogError("Can't find the UpgradeController");
+			Debug.LogError("Can't find the UniqueUpgradeController");
+		}
+	}
+	public void OnBouceUpgradePressed(){
+		if(upgradeController.BounceUpgrade()){
+			bounceButton.GetComponentInChildren<Button>().interactable = false;
+		}
+	}
+	public void OnMultipleHooksUpgradePressed(){
+		if(upgradeController.MultipleHooksUpgrade()){
+			multipleHookButton.GetComponentInChildren<Button>().interactable = false;
 		}
 	}
 	
@@ -56,12 +66,10 @@ public class UniqueUpgradeButton : MonoBehaviour {
 	}
 
 	void Update () {
-		UniqueUpgrade uc = upgradeController.GetComponent<UniqueUpgrade>();
-
 		if(InitializeButtonsText()){
 			// Set the cost's value
-			bounceCostText.text = uc.GetBounceCost().ToString();
-			multipleHookCostText.text = uc.GetMultipleHookCost().ToString();
+			bounceCostText.text = upgradeController.GetBounceCost().ToString();
+			multipleHookCostText.text = upgradeController.GetMultipleHookCost().ToString();
 		}
 	}
 }
