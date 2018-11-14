@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 public class ThreshThrow : MonoBehaviour {
 
@@ -8,11 +8,17 @@ public class ThreshThrow : MonoBehaviour {
 	private ThreshBehaviour thresh;
 	private Animator animator;
 
-	void Start(){
+	void Awake() {
 		thresh = GetComponentInParent<ThreshBehaviour>();
 		animator = GetComponent<Animator>();
-		EventManager.AddListener("OnHookDestroyed", this.gameObject);
-		EventManager.AddListener("OnHookCreated", this.gameObject);
+		
+		EventManager.AddListener("OnHookCreated", this.OnHookCreated);
+		EventManager.AddListener("OnHookDestroyed", this.OnHookDestroyed);
+	}
+
+	void OnDisable() {
+		EventManager.RemoveListener("OnHookCreated", this.OnHookCreated);
+		EventManager.RemoveListener("OnHookDestroyed", this.OnHookDestroyed);
 	}
 
 	void OnHookCreated(){

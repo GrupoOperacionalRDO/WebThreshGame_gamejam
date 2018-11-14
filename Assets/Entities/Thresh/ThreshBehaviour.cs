@@ -14,7 +14,7 @@ public class ThreshBehaviour : MonoBehaviour {
 	private Vector3 hookPos;
 
 	void Start () {
-		hookHand = transform.FindChild("ThreshHandHook").gameObject;
+		hookHand = transform.Find("ThreshHandHook").gameObject;
 		if(!hookHand){
 			Debug.LogError("Can't find ThreshHandHook GameObject");
 		}

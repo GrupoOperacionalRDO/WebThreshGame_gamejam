@@ -7,7 +7,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
 	private SpriteRenderer spriteRenderer;
 
-	void Start () {
+	void Awake () {
 		GameObject parent = GameObject.Find ("Enemies");
 		if(!parent){
 			parent = new GameObject("Enemies");

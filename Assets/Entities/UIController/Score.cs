@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class Score : MonoBehaviour {
 
@@ -10,7 +10,7 @@ public class Score : MonoBehaviour {
 	
 	
 	void Awake () {
-		EventManager.AddListener ("OnEnemyDestroyed", this.gameObject);
+		EventManager.AddListener ("OnEnemyDestroyed", this.OnEnemyDestroyed);
 		
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 		
