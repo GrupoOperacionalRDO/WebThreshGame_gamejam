@@ -6,37 +6,35 @@ public class Score : MonoBehaviour {
 
 	private ThreshBehaviour thresh;
 	private int score = 100;
-	private Text scoreTxt;
-	
+	private Text scoreText;
 	
 	void Awake () {
 		EventManager.AddListener ("OnEnemyDestroyed", this.OnEnemyDestroyed);
 		
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 		
-		scoreTxt = GameObject.Find ("ScoreText").GetComponent<Text>();
-		if(!scoreTxt){
+		scoreText = GameObject.Find ("ScoreText").GetComponent<Text>();
+		if (!scoreText) {
 			Debug.LogError("Can't find the ScoreText");
 		}
 	}
 
-	public void SetScore(int scr){
-		score = scr;
+	public bool UseScore(int amount) {
+		if((score - amount) < 0) return false;
+		
+        score -= amount;
+		return true;
 	}
 
-	public int GetScore(){
-		return score;
-	}
-
-	private void OnEnemyDestroyed (){
+	private void OnEnemyDestroyed () {
 		score += thresh.value; 
 	}
 
-	void FixedUpdate(){
-		scoreTxt.text = "Score: " + score;
+	void FixedUpdate() {
+		scoreText.text = "Score: " + score;
 	}
 
-	public void Teste(){
+	public void Teste() {
 		print ("Teste");
 	}
 }

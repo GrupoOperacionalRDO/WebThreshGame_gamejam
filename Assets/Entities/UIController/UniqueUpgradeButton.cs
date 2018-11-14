@@ -13,63 +13,44 @@ public class UniqueUpgradeButton : MonoBehaviour {
 	private Text multipleHookCostText;
 
 	void Awake () {
-		InitializeButtonsText();
-
 		upgradeController = GameObject.FindObjectOfType<UniqueUpgradeController>();
-		if(!upgradeController){
+		if (!upgradeController) {
 			Debug.LogError("Can't find the UniqueUpgradeController");
 		}
+
+		InitializeButtonsText();
 	}
-	public void OnBouceUpgradePressed(){
-		if(upgradeController.BounceUpgrade()){
+	
+	void InitializeButtonsText() {
+		BounceButtonInitialize();
+		MultipleHookButtonInitialize();
+	}
+	
+	public void OnBouceUpgradePressed() {
+		if (upgradeController.BounceUpgrade()) {
 			bounceButton.GetComponentInChildren<Button>().interactable = false;
 		}
 	}
-	public void OnMultipleHooksUpgradePressed(){
-		if(upgradeController.MultipleHooksUpgrade()){
+	
+	public void OnMultipleHooksUpgradePressed() {
+		if (upgradeController.MultipleHooksUpgrade()) {
 			multipleHookButton.GetComponentInChildren<Button>().interactable = false;
 		}
 	}
 	
-	bool InitializeButtonsText(){
-		bool getData = false;
-		if(bounceButton.gameObject.activeInHierarchy){
-			BounceButtonInitialize();
-			getData = true;
-		}
-		if(multipleHookButton.gameObject.activeInHierarchy){
-			MultipleHookButtonInitialize();
-			getData = true;
-		}
-		return getData;
+	void BounceButtonInitialize() {
+		bounceButton.transform.Find("UpgradeIcon").GetComponent<Button>().onClick.AddListener(this.OnBouceUpgradePressed);
+		bounceCostText = bounceButton.transform.Find("ValuePanel/ValueText").GetComponent<Text>();
 	}
-	
-	void BounceButtonInitialize(){
-		Text[] texts = bounceButton.GetComponentsInChildren<Text>();
-		foreach(Text text in texts){
-			switch(text.name){
-			case "ValueText":
-				bounceCostText = text;
-				break;
-			}
-		}
-	}
-	void MultipleHookButtonInitialize(){
-		Text[] texts = multipleHookButton.GetComponentsInChildren<Text>();
-		foreach(Text text in texts){
-			switch(text.name){
-			case "ValueText":
-				multipleHookCostText = text;
-				break;
-			}
-		}
+
+	void MultipleHookButtonInitialize() {
+		multipleHookButton.transform.Find("UpgradeIcon").GetComponent<Button>().onClick.AddListener(this.OnMultipleHooksUpgradePressed);
+        multipleHookCostText = multipleHookButton.transform.Find("ValuePanel/ValueText").GetComponent<Text>();
 	}
 
 	void Update () {
-		if(InitializeButtonsText()){
-			// Set the cost's value
-			bounceCostText.text = upgradeController.GetBounceCost().ToString();
-			multipleHookCostText.text = upgradeController.GetMultipleHookCost().ToString();
-		}
+		// Set the cost's value
+		bounceCostText.text = upgradeController.BounceCost.ToString();
+		multipleHookCostText.text = upgradeController.MultipleHookCost.ToString();
 	}
 }
