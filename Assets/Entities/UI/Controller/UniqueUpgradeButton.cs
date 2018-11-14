@@ -8,9 +8,11 @@ public class UniqueUpgradeButton : MonoBehaviour {
 	
 	public GameObject bounceButton;
 	public GameObject multipleHookButton;
+    public GameObject phaseButton;
 
 	private Text bounceCostText;
 	private Text multipleHookCostText;
+    private Text phaseCostText;
 
 	void Awake () {
 		upgradeController = GameObject.FindObjectOfType<UniqueUpgradeController>();
@@ -23,7 +25,8 @@ public class UniqueUpgradeButton : MonoBehaviour {
 	
 	void InitializeButtonsText() {
 		BounceButtonInitialize();
-		MultipleHookButtonInitialize();
+        MultipleHookButtonInitialize();
+        PhaseButtonInitialize();
 	}
 	
 	public void OnBouceUpgradePressed() {
@@ -37,6 +40,12 @@ public class UniqueUpgradeButton : MonoBehaviour {
 			multipleHookButton.GetComponentInChildren<Button>().interactable = false;
 		}
 	}
+
+	public void OnPhasesUpgradePressed() {
+		if (upgradeController.PhaseUpgrade()) {
+            phaseButton.GetComponentInChildren<Button>().interactable = false;
+		}
+	}
 	
 	void BounceButtonInitialize() {
 		bounceButton.transform.Find("UpgradeIcon").GetComponent<Button>().onClick.AddListener(this.OnBouceUpgradePressed);
@@ -48,9 +57,15 @@ public class UniqueUpgradeButton : MonoBehaviour {
         multipleHookCostText = multipleHookButton.transform.Find("ValuePanel/ValueText").GetComponent<Text>();
 	}
 
+	void PhaseButtonInitialize() {
+		phaseButton.transform.Find("UpgradeIcon").GetComponent<Button>().onClick.AddListener(this.OnPhasesUpgradePressed);
+        phaseCostText = phaseButton.transform.Find("ValuePanel/ValueText").GetComponent<Text>();
+	}
+
 	void Update () {
 		// Set the cost's value
 		bounceCostText.text = upgradeController.BounceCost.ToString();
-		multipleHookCostText.text = upgradeController.MultipleHookCost.ToString();
+        multipleHookCostText.text = upgradeController.MultipleHookCost.ToString();
+        phaseCostText.text = upgradeController.PhaseCost.ToString();
 	}
 }

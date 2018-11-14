@@ -8,6 +8,7 @@ public class ThreshBehaviour : MonoBehaviour {
 	public int value = 1;
 	public bool bounce = false;
 	public bool multipleHooks = false;
+    public bool phase = false;
 
 	private GameObject hookHand;
 	private float angle;

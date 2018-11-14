@@ -12,7 +12,7 @@ public class HookBehaviour : MonoBehaviour {
 	protected float speed;
 	protected float timeCounter;
 
-	protected void Configure(){
+	protected void Configure() {
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 		hookCord = transform.Find("HookLinePoint").gameObject;
 		thisRigidbody = GetComponent<Rigidbody2D>();
@@ -22,12 +22,12 @@ public class HookBehaviour : MonoBehaviour {
 		lineRender.SetPosition (1, hookCord.transform.position);
 	}
 
-	void Awake(){
+	void Awake() {
 		Configure ();
 	}
 
-	public void SetVelocity(float speed){
-		if(!thisRigidbody){
+	public void SetVelocity(float speed) {
+		if (!thisRigidbody) {
 			thisRigidbody = GetComponent<Rigidbody2D>();
 		}
 		this.speed = speed;
@@ -35,7 +35,7 @@ public class HookBehaviour : MonoBehaviour {
 	}
 	// Update is called once per frame
 
-	protected void UpdateHandler(){
+	protected void UpdateHandler() {
 		MaxRangeDestroy ();
 		lineRender.SetPosition (1, hookCord.transform.position);
 		float distance = Vector2.Distance(hookHand.transform.position, hookCord.transform.position);
@@ -46,27 +46,27 @@ public class HookBehaviour : MonoBehaviour {
 		UpdateHandler ();
 	}
 
-	protected void OnTriggerEnter2D(Collider2D coll){
+	protected void OnTriggerEnter2D(Collider2D coll) {
 		EnemyBehaviour en = coll.GetComponent<EnemyBehaviour>();
-		if(en){
+		if (en) {
 			en.DestroyEnemy();
-			DestroyHook();
+            if (!thresh.phase) DestroyHook();
 		}
 	}
 
-	protected void OnTriggerExit2D(Collider2D coll){
+	protected void OnTriggerExit2D(Collider2D coll) {
 		Wall wall = coll.GetComponent<Wall>();
-		if(wall){
+		if (wall) {
 			if (thresh.bounce) {
 				float angle = 0;
 				Vector3 bounds = General.GetCameraSize();
 				float topBound = bounds.y / 2;
 				float rightBound = bounds.x / 2;
 
-				if(Mathf.Abs(transform.position.y) >= topBound){
+				if (Mathf.Abs(transform.position.y) >= topBound) {
 					float ang = 90 - transform.eulerAngles.z;
 					angle = transform.eulerAngles.z + (2 * ang);
-				} else if(Mathf.Abs(transform.position.x) >= rightBound){
+				} else if (Mathf.Abs(transform.position.x) >= rightBound) {
 					angle = -transform.eulerAngles.z;
 				}
 
@@ -78,7 +78,7 @@ public class HookBehaviour : MonoBehaviour {
 		}
 	}
 
-	protected void MaxRangeDestroy(){
+	protected void MaxRangeDestroy() {
 		timeCounter += Time.deltaTime;
 		float distance = speed * timeCounter;
 		if (distance > thresh.maxRange) { 
@@ -86,10 +86,10 @@ public class HookBehaviour : MonoBehaviour {
 		}
 	}
 
-	protected virtual void DestroyHook(){
+	protected virtual void DestroyHook() {
 		EventManager.HandleMessage("OnHookDestroyed");
 		SecondaryHookBehaviour[] secondaries = GameObject.FindObjectsOfType<SecondaryHookBehaviour>();
-		foreach(SecondaryHookBehaviour sh in secondaries){
+		foreach(SecondaryHookBehaviour sh in secondaries) {
 			sh.DestroyHook();
 		}
 		Destroy (this.gameObject);

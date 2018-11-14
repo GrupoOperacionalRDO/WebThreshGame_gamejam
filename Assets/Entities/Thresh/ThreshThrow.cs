@@ -21,15 +21,15 @@ public class ThreshThrow : MonoBehaviour {
 		EventManager.RemoveListener("OnHookDestroyed", this.OnHookDestroyed);
 	}
 
-	void OnHookCreated(){
+	void OnHookCreated() {
 		animator.SetBool(HOOK_THROW, true);
 	}
 
-	void OnHookDestroyed(){
+	void OnHookDestroyed() {
 		animator.SetBool(HOOK_THROW, false);
 	}
 
-	void HookThrow(){
+	void HookThrow() {
 		thresh.HookThrow();
 	}
 }

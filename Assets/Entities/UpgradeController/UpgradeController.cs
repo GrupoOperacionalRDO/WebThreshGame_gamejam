@@ -31,6 +31,7 @@ public class UpgradeController : MonoBehaviour {
 		if (scoreController.UseScore(speedCost)) {
 			thresh.speed += 0.5f;
 			speedLevel++;
+			speedCost *= 2;
 			return true;
 		}
 		return false;
@@ -40,6 +41,7 @@ public class UpgradeController : MonoBehaviour {
 		if (scoreController.UseScore(incomeCost)) {
 			thresh.value += 1;
 			incomeLevel++;
+			incomeCost *= 2;
 			return true;
 		}
 		return false;
@@ -49,6 +51,7 @@ public class UpgradeController : MonoBehaviour {
 		if (scoreController.UseScore(rangeCost)) {
 			thresh.maxRange += 3f;
 			rangeLevel++;
+			rangeCost *= 2;
 			return true;
 		}
 		return false;
