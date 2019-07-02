@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class UniqueUpgradeController : MonoBehaviour {
+public class UniqueUpgradeController : MonoBehaviour
+{
 
 	private ThreshBehaviour thresh;
 	private Score scoreController;
@@ -15,15 +16,31 @@ public class UniqueUpgradeController : MonoBehaviour {
     public int MultipleHookCost { get { return multipleHookCost; } }
     public int PhaseCost { get { return phaseCost; } }
 
-	void Start () {
+	void Start ()
+	{
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 		scoreController = GameObject.FindObjectOfType<Score>();
 	}
 
-	public bool BounceUpgrade() {
-		if(thresh.bounce) return false;
+    #if UNITY_EDITOR
+		void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.E))
+			{
+				Debug.Log("Unique upgrade cheat!");
+				BounceUpgrade();
+				MultipleHooksUpgrade();
+				PhaseUpgrade();
+			}
+		}
+    #endif
+
+	public bool BounceUpgrade()
+	{
+		if(thresh.bounce) return true;
 		
-		if (scoreController.UseScore(bounceCost)) {
+		if (scoreController.UseScore(bounceCost))
+		{
 			thresh.bounce = true;
 			return true;
 		}
@@ -31,10 +48,12 @@ public class UniqueUpgradeController : MonoBehaviour {
 		return false;
 	}
 
-	public bool MultipleHooksUpgrade() {
-		if (thresh.multipleHooks) return false;
+	public bool MultipleHooksUpgrade()
+	{
+		if (thresh.multipleHooks) return true;
 		
-		if (scoreController.UseScore(multipleHookCost)) {
+		if (scoreController.UseScore(multipleHookCost))
+		{
 			thresh.multipleHooks = true;
 			return true;
 		}
@@ -42,10 +61,12 @@ public class UniqueUpgradeController : MonoBehaviour {
 		return false;
 	}
 
-	public bool PhaseUpgrade() {
-		if (thresh.phase) return false;
+	public bool PhaseUpgrade()
+	{
+		if (thresh.phase) return true;
 		
-		if (scoreController.UseScore(phaseCost)) {
+		if (scoreController.UseScore(phaseCost))
+		{
 			thresh.phase = true;
 			return true;
 		}

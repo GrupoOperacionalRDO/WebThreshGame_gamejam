@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UpgradeController : MonoBehaviour {
+public class UpgradeController : MonoBehaviour
+{
 
 	private ThreshBehaviour thresh;
 	private Score scoreController;
@@ -22,13 +23,29 @@ public class UpgradeController : MonoBehaviour {
     public int SpeedLevel { get { return speedLevel; } }
     public int IncomeLevel { get { return incomeLevel; } }
 
-	void Awake () {
+	void Awake ()
+	{
 		thresh = GameObject.FindObjectOfType<ThreshBehaviour> ();
 		scoreController = GameObject.FindObjectOfType<Score>();
 	}
 
-	public bool UpgradeSpeed() {
-		if (scoreController.UseScore(speedCost)) {
+    #if UNITY_EDITOR
+		void Update()
+		{
+			if (Input.GetKeyDown(KeyCode.W))
+			{
+				Debug.Log("Upgrade cheat!");
+				UpgradeSpeed();
+				UpgradeIncome();
+				UpgradeRange();
+			}
+		}
+    #endif
+
+	public bool UpgradeSpeed()
+	{
+		if (scoreController.UseScore(speedCost))
+		{
 			thresh.speed += 0.5f;
 			speedLevel++;
 			speedCost *= 2;
@@ -37,8 +54,10 @@ public class UpgradeController : MonoBehaviour {
 		return false;
 	}
 	
-	public bool UpgradeIncome() {
-		if (scoreController.UseScore(incomeCost)) {
+	public bool UpgradeIncome()
+	{
+		if (scoreController.UseScore(incomeCost))
+		{
 			thresh.value += 1;
 			incomeLevel++;
 			incomeCost *= 2;
@@ -47,8 +66,10 @@ public class UpgradeController : MonoBehaviour {
 		return false;
 	}
 
-	public bool UpgradeRange() {
-		if (scoreController.UseScore(rangeCost)) {
+	public bool UpgradeRange()
+	{
+		if (scoreController.UseScore(rangeCost))
+		{
 			thresh.maxRange += 3f;
 			rangeLevel++;
 			rangeCost *= 2;
